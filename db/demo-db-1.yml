@@ -1,0 +1,11 @@
+---
+apiVersion: app.redislabs.com/v1alpha1
+kind: RedisEnterpriseDatabase
+metadata:
+  name: andre-db-demo-1
+spec:
+  redisEnterpriseCluster:
+    name: andre-rec-demo
+  memorySize: 1G
+  shardCount: 1
+  replication: false

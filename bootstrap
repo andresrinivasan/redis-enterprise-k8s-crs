@@ -1,0 +1,18 @@
+#!/bin/sh
+
+export CLUSTER_NAME=andre-test
+gcloud container clusters create $CLUSTER_NAME \
+  --enable-stackdriver-kubernetes --num-nodes 5 --machine-type n1-standard-8 \
+  --enable-ip-alias
+
+kubectl create clusterrolebinding my-cluster-admin-binding --clusterrole cluster-admin \
+  --user $(gcloud config get-value account)
+kubectl create namespace demo
+kubectl config set-context --current --namespace=demo
+kubectl apply -f https://raw.githubusercontent.com/RedisLabs/redis-enterprise-k8s-docs/master/bundle.yaml
+
+cat cluster/demo-cluster.yml db/demo-db-*.yml | k apply -f -
+
+## k get secrets andre-rec-demo -o json | jq -r '[.data.username, .data.password] | map(@base64d) | .[]'
+## k port-forward andre-rec-demo-0 8443 &>/dev/null &
+## k exec -it andre-rec-demo-0 -c redis-enterprise-node -- /bin/bash

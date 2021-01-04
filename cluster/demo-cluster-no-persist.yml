@@ -1,0 +1,17 @@
+---
+apiVersion: app.redislabs.com/v1
+kind: RedisEnterpriseCluster
+metadata:
+  name: andre-rec-demo-no-persist
+spec:
+  nodes: 3
+  persistentSpec:
+    enabled: false
+    storageClassName: "foobarbaz" ## This is not needed. Just here for testing.
+  redisEnterpriseNodeResources:
+    limits:
+      cpu: 4000m  
+      memory: 4Gi
+    requests:
+      cpu: 4000m
+      memory: 4Gi

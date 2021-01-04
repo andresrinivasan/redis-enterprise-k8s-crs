@@ -1,0 +1,14 @@
+---
+apiVersion: app.redislabs.com/v1
+kind: RedisEnterpriseCluster
+metadata:
+  name: andre-rec-micro
+spec:
+  nodes: 3
+  redisEnterpriseNodeResources:
+    limits:
+      cpu: 1000m  
+      memory: 4Gi
+    requests:
+      cpu: 1000m
+      memory: 4Gi
