@@ -7,7 +7,7 @@ spec:
   nodes: 3
   persistenceSpec:
     enabled: true
-    storageClassName: "standard" # GCP specific
+    storageClassName: standard # GCP specific
   uiServiceType: LoadBalancer
   redisEnterpriseNodeResources:
     limits:
