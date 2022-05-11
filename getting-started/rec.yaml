@@ -3,7 +3,7 @@
 apiVersion: app.redislabs.com/v1
 kind: RedisEnterpriseCluster
 metadata:
-  name: andre-rec-demo
+  name: rec-demo
 spec:
   nodes: 3
   persistentSpec:
