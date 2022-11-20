@@ -1,0 +1,11 @@
+---
+## redb.yaml
+apiVersion: app.redislabs.com/v1alpha1
+kind: RedisEnterpriseDatabase
+metadata:
+  name: redb-demo
+spec:
+  memorySize: 1G
+  shardCount: 2
+  replication: true
+  tlsMode: enabled
