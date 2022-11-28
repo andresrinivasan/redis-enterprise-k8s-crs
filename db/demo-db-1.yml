@@ -1,5 +1,5 @@
 ---
-apiVersion: app.redislabs.com/v1alpha1
+apiVersion: app.redislabs.com/v1
 kind: RedisEnterpriseDatabase
 metadata:
   name: andre-db-demo-1
