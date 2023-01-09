@@ -1,5 +1,4 @@
 # Request a LoadBalancer service for the Redis Enterprise UI
-
 apiVersion: app.redislabs.com/v1
 kind: RedisEnterpriseCluster
 metadata:

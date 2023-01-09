@@ -1,5 +1,4 @@
 ---
-## rec.yaml
 apiVersion: app.redislabs.com/v1
 kind: RedisEnterpriseCluster
 metadata:
